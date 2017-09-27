@@ -36,9 +36,12 @@ Para vectorizar las palabras se probaron dos estrategias diferentes:
 
 2. **Word embeddings neuronales**
 
-
 ### clustering
 
-## herramienta de clustering
+En ambos casos de vectorización se utilizó el algoritmo de clustering [K-means](https://en.wikipedia.org/wiki/K-means_clustering)
 
 ## resultados
+
+1. **Clustering sobre vectores a partir de matriz de co-ocurrencias**
+
+2. **Clustering sobre word embeddings neuronales**
