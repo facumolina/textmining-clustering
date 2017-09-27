@@ -8,12 +8,12 @@ Encontrar grupos de palabras que puedan ser usados como clases de equivalencia, 
 
 ## detalles técnicos
 
-	Se utilizó el corpus _resources/LaVanguardia.txt.gz, una recopilación de noticias del diario La Vanguardia.
+Se utilizó el corpus _resources/LaVanguardia.txt.gz, una recopilación de noticias del diario La Vanguardia.
 
-	Se utilizaron las siguientes herramientas:
-		* [nltk](http://www.nltk.org/)
-		* [scikit-learn](http://scikit-learn.org/stable/)
-		* [gensim](https://radimrehurek.com/gensim/index.html)
+Se utilizaron las siguientes herramientas:
+* [nltk](http://www.nltk.org/)
+* [scikit-learn](http://scikit-learn.org/stable/)
+* [gensim](https://radimrehurek.com/gensim/index.html)
 
 ## proceso aplicado al corpus
 
