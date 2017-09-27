@@ -36,10 +36,10 @@ def tokenize(text):
 	return tokenized_sents
 
 
-def gen_clusters(vectors):
+def gen_clusters(vectors,n):
 	# Generate words clusters using the k-means algorithm
 	print("\nClustering started")
-	km_model = KMeans(n_clusters=8)
+	km_model = KMeans(n_clusters=n)
 	km_model.fit(vectors)
 	print("Labels: ",km_model.labels_)
 	print("Clustering finished")
@@ -51,9 +51,9 @@ if __name__ == "__main__":
 
 	normalized = tokenize(file_content)
 
-	#gen_clusters(vectors) # Generate clusters
 	model = Word2Vec(normalized,min_count=1)
-	model.save('the_model')
-	model = Word2Vec.load('the_model')
+
+	#gen_clusters(vectors,40) # Generate clusters
+
 
 
