@@ -26,9 +26,16 @@ Para normalizar las palabras se dividió el texto en sentencias y para cada sent
 
 ### vectorización 
 
-1. Umbral de frecuencia
+Para vectorizar las palabras se probaron dos estrategias diferentes:
 
-2. Word embeddings neuronales
+1. **Vectorización con reducción de dimensionalidad mediante umbral de frecuencia**
+
+* Se construyó la matriz de co-ocurrencia entre palabras en un contexto dado (dos palabras anteriores más las dos palabras siguientes).
+* Se redujo la dimensionalidad de la matriz utilizando en las columnas sólo aquellas palabras que superaban un umbral de frecuencia dado. 
+* Se obtuvieron los vectores a partir de las filas de la matriz resultante.
+
+2. **Word embeddings neuronales**
+
 
 ### clustering
 
