@@ -20,7 +20,11 @@ def readFile():
 
 def process_tokens(tokens):
 	# Process the given list of tokens
-	words = [token for token in tokens if token not in stopwords.words('spanish')] # Remove stopwords
+	tokens = [token.lower() for token in tokens]	# All tokens to lowercase
+
+	words = [token for token in tokens if token.isalpha()]	# Maintain strings with alphabetic characters
+
+	words = [token for token in words if token not in stopwords.words('spanish')] # Remove stopwords
 
 	wnl = nltk.WordNetLemmatizer()
 	lemmatized = [wnl.lemmatize(t) for t in words] # Lemmatization
@@ -30,12 +34,6 @@ def process_tokens(tokens):
 def tokenize(text):
 	# Tokenize and normalize the given text.
 	sents = nltk.sent_tokenize(text)
-	
-	sents = [sent.lower() for sent in sents]	# All sentences to lowercase
-
-	sents = [re.sub(r'\d+', '', sent) for sent in sents] # Remove numbers
-
-	sents = [re.sub(r'([^\s\w]|_)+', '', sent) for sent in sents] # Only alphabetic characters
 
 	tokenized_sents = [nltk.word_tokenize(sent) for sent in sents]
 
@@ -54,7 +52,7 @@ def gen_vectors(normalized_text):
 	matrix = numpy.array(vects)
 	print("Matrix shape:",matrix.shape)
 	print("Vectors generated")
-	return matrix
+	return model.wv.vocab,matrix
 
 def gen_clusters(vectors):
 	# Generate word clusters using the k-means algorithm.
@@ -65,24 +63,39 @@ def gen_clusters(vectors):
 	print("Clustering finished")
 	return km_model
 
-def show_results(model):
+def show_results(vocabulary,model):
 	# Show results
 	c = Counter(sorted(model.labels_))
 	print("\nTotal clusters:",len(c))
 	for cluster in c:
 		print ("Cluster#",cluster," - Total words:",c[cluster])
 
+	# Show top terms and words per cluster
+	print("Top words per cluster:")
+	print()
+
+	keysVocab = list(vocabulary.keys())
+	for n in range(len(c)):
+		print("Cluster %d" % n)
+		print("Words:", end='')
+		word_indexs = [i for i,x in enumerate(list(model.labels_)) if x == n]
+		for i in word_indexs:
+			print(' %s' % keysVocab[i], end=',')
+		print()
+		print()
+
+	print()
 if __name__ == "__main__":
 
 	file_content = readFile() # Read the TEXT_FILE
 
 	normalized = tokenize(file_content)
 
-	vectors = gen_vectors(normalized)
+	vocabulary, vectors = gen_vectors(normalized)
 
 	km_model = gen_clusters(vectors) # Generate clusters
 
-	show_results(km_model)
+	show_results(vocabulary,km_model)
 
 
 

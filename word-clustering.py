@@ -29,7 +29,7 @@ def create_cooccurrence_matrix(text,tokenizer,frequent_words):
 	col=[]
 	sentences = nltk.sent_tokenize(text)
 	for sentence in sentences:
-		tokens=tokenizer(sentence) 
+		tokens=tokenizer(sentence)
 		for pos,token in enumerate(tokens):
 			i=set_all_words.setdefault(token,len(set_all_words))
 			start=max(0,pos-WINDOWS_SIZE)
@@ -43,7 +43,7 @@ def create_cooccurrence_matrix(text,tokenizer,frequent_words):
 	print("Vocabulary size:",len(set_all_words))
 	print("Matrix shape:",cooccurrence_matrix.shape)
 	print("Co-occurrence matrix finished")
-	return set_all_words,cooccurrence_matrix
+	return set_all_words,set_freq_words,cooccurrence_matrix
 
 def tokenize(text):
 	# Tokenize and normalize the given text.	
@@ -87,12 +87,36 @@ def frequent_words(text):
 	print("Most frequent words calculated. Total:",str(len(most_frequents)))
 	return most_frequents
 
-def show_results(model):
+def show_results(vocabulary,features,model):
 	# Show results
 	c = Counter(sorted(model.labels_))
 	print("\nTotal clusters:",len(c))
 	for cluster in c:
 		print ("Cluster#",cluster," - Total words:",c[cluster])
+
+	# Show top terms and words per cluster
+	print("Top terms and words per cluster:")
+	print()
+	#sort cluster centers by proximity to centroid
+	order_centroids = model.cluster_centers_.argsort()[:, ::-1] 
+
+	keysFeatures = list(features.keys())
+	keysVocab = list(vocabulary.keys())
+	for n in range(len(c)):
+		print("Cluster %d" % n)
+		print("Frequent terms:", end='')
+		for ind in order_centroids[n, :10]:
+			print(' %s' % keysFeatures[ind], end=',')
+
+		print()
+		print("Words:", end='')
+		word_indexs = [i for i,x in enumerate(list(model.labels_)) if x == n]
+		for i in word_indexs:
+			print(' %s' % keysVocab[i], end=',')
+		print()
+		print()
+
+	print()
 
 if __name__ == "__main__":
 
@@ -100,8 +124,8 @@ if __name__ == "__main__":
 
 	frequent_words = frequent_words(file_content) # Get the most frequent words
 
-	vocabulary, vectors = create_cooccurrence_matrix(file_content,tokenize,frequent_words) # Create the co-occurrence matrix
+	vocabulary, features, vectors = create_cooccurrence_matrix(file_content,tokenize,frequent_words) # Create the co-occurrence matrix
 
 	km_model = gen_clusters(vectors) # Generate clusters
 
-	show_results(km_model)
+	show_results(vocabulary,features,km_model)
