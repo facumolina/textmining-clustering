@@ -123,9 +123,42 @@ En el archivo _results/wordclustering.txt_ se puede ver output completo de la ej
 
 **Clustering sobre word embeddings neuronales**
 
-Utilizando está técnica, la matriz generada tiene un tamaño de (126281, 100), mucho menor a la técnica anterior.
+Este caso se puede ejecutar con el siguiente comando:
+	_python -i word2vec-and-clustering.py_ (asegurar de que el archivo _resources/LaVanguardia.txt.gz_ fue descomprimido y que aparece el corpus LaVanguardia.txt)
 
-En el siguiente listado podemos ver las algunas palabras de los 10 primeros clusters:
+Utilizando esta técnica, la matriz generada tiene un tamaño de (126281, 100), mucho menor a la técnica anterior.
+
+En el siguiente listado podemos ver algunas palabras de los 10 primeros clusters:
+
+	Cluster 0
+	Words: año, me, caso, catarara, ciclo, día, momento, tiempo, siendo, espacio, capítulo, bianual, programa, ambiente, punto, otoño, nombre, camino, bloque, campo, equipo, idolatrar, lugar, libro, teatro, escenario, destino, impares, heures, paso, patinazo, plano, siglo, título, puente, disco, periodo, plazo, oriente, término
+
+	Cluster 1
+	Words: peajes, titularidad, correspondientes, tarifas, concesionarias, incrementar, aplica, reducción, beneficie, mantenimiento, pagarán, cubrir, conexiones, eléctricas, previsión, clientela, mejora, techo, depósitos, suministro, producto, requisitos, específicos, usuario, lleguen, vender, mediante, generen, creciendo
+
+	Cluster 2
+	Words: pasillos, subsanado, mando, turno, hoja, bella, tensa, solitaria, atendida, cortada, terraza, mirador, suspendido, falda, sexto, aparecerá, recuperará, hundió, guifré, motivó, suspendió, desempeñaban, finalizaron, actuará, armado, retirado, concluyes, lampedusa, internado, aficionó, ópera, emperador, cabecera
+
+	Cluster 3
+	Words: días, horas, expirado, embucharon, deseasen, buyle, desapercibidas, caballeroso, aplazará, sato, solstice, arraigó, acristalado, encuadernada, identificarme, nuyum, crecerían, aconsejase, pórticos, algarve, graiera, úrico, terroir, hispanoguineana, colomense, reconociéndolo, minitenis, facturaciones, emte, nacían
+
+	Cluster 4
+	Words: gobierno, consejo, ministros, decreto, apruebe, ministro, piqué, aseguró, dado, críticas, catalán, marco, señala, nadal, psc, expresó, recordó, pendiente, general, afirmar, añadió, aprovechó, mantiene, anuncio, tomada, nota, dijo, respondió, alarmista, dirigentes, debate, voto, públicamente, señalar, carta, ciu, pp
+
+	Cluster 5
+	Words: aprobó, explicó, fuentes, reveló, vanguardia, responsables, informe, indicativas, datos, director, policial, manifestaron, prensa, diario, consta, informa, seskutov, anunciaron, indicaron, informaron, xxvii, reunieron, campaners, denunció, bromeaba, relató, cruzarla, desmantelado, encuesta, anunció, fayos, confirmó
+
+	Cluster 6
+	Words: decidió, debía, iba, cuenta, podía, preferido, decidido, puede, pudo, debe, va, puedan, pueden, quiso, quiere, acaban, arrollado, van, pasa, permitió, empezado, podría, pretende, poder, deberá, podrían, obliga, volvieron, vamos, debería, devoradas, volvió, dejó, deja, capaz, quería, suele, retrocedería, gustado,  
+
+	Cluster 7
+	Words: cubrieron, universitària, begues, climent, associats, sl, recalificación, tractament, residus, sa, trm, coberta, pallejà, magda, cal, patronatos, siurana, ter, alfons, hortelanos, roda, vilassar, german, noguera, rubió, cáritas, món, ajuda, psicopatològica, psicosocial, immigrant, de, impulsoras, wave, propietario
+
+	Cluster 8
+	Words: misma, cada, única, gran, primera, cuya, toda, tal, aquella, mayor, larga, menor, alguna, doble, urbana, segunda, plenum, propia, leídas, buena, cualquier, última, civil, pequeña, alta, principal, puesta, férrea, cuarta, tercera, ninguna, avanzada, forman, acuerdas, depure, tirarse, formará, bobies, original, formaba
+
+	Cluster 9
+	Words: quedan, alteraciones, intensidad, gotas, menos, male, causa, semáforos, dan, moda, amantes, verdades, relatos, arma, solamente, motivos, ponernos, aquellos, situaciones, ejemplos, recomendable, evitan, cola, marchan, sufriendo, chavales, perros, excrementos, ponen, pasos, motivaron, admiten, aficionado, incapacitados
 
 En el archivo _results/word2vecclustering.txt_ se puede ver output completo de la ejecución.
 
