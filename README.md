@@ -18,7 +18,7 @@ Se utilizaron las siguientes herramientas:
 ## proceso aplicado al corpus
 
 ### normalización
-Para normalizar las palabras se dividió el texto en sentencias y para cada sentencia, se creó una lista de tokens utilizando nltk. Luego, para cada lista de sentencias
+Para normalizar las palabras se dividió el texto en sentencias y para cada sentencia, se creó una lista de tokens utilizando nltk. Luego, para cada lista de tokens
 * todos los tokens fueron expresados en lowercase,
 * se eliminaron los tokens que tenian caracteres no alfabéticos, 
 * se eliminaron las _stopwords_ del lenguaje español (palabras muy frecuentes en el lenguaje que aportan poco valor) definidas en nltk,
