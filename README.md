@@ -57,47 +57,76 @@ Este caso se puede ejecutar con el siguiente comando:
 
 Utilizando la técnica de umbral de frecuencia la matriz fue reducida desde el tamaño (126281,126281) al tamaño (126281,28877).
 
-En el siguiente listado podemos ver todos los clusters con la cantidad de palabaras en cada uno:
+En el siguiente listado podemos ver las 10 palabras que más se relacionan con las palabras de los 20 primeros clusters:
 	
-	Cluster#0 - Total words: 121
-	Cluster#1 - Total words: 74525
-	Cluster#2 - Total words: 1027
-	Cluster#3 - Total words: 2076
-	Cluster#4 - Total words: 9825
-	Cluster#5 - Total words: 676
-	Cluster#6 - Total words: 1163
-	Cluster#7 - Total words: 1479
-	Cluster#8 - Total words: 1057
-	Cluster#9 - Total words: 730
-	Cluster#10 - Total words: 1067
-	Cluster#11 - Total words: 1083
-	Cluster#12 - Total words: 1440
-	Cluster#13 - Total words: 1517
-	Cluster#14 - Total words: 399
-	Cluster#15 - Total words: 1480
-	Cluster#16 - Total words: 1861
-	Cluster#17 - Total words: 1282
-	Cluster#18 - Total words: 1435
-	Cluster#19 - Total words: 854
-	Cluster#20 - Total words: 719
-	Cluster#21 - Total words: 1389
-	Cluster#22 - Total words: 492
-	Cluster#23 - Total words: 909
-	Cluster#24 - Total words: 922
-	Cluster#25 - Total words: 1270
-	Cluster#26 - Total words: 846
-	Cluster#27 - Total words: 984
-	Cluster#28 - Total words: 767
-	Cluster#29 - Total words: 670
-	Cluster#30 - Total words: 800
-	Cluster#31 - Total words: 1992
-	Cluster#32 - Total words: 1019
-	Cluster#33 - Total words: 1938
-	Cluster#34 - Total words: 845
-	Cluster#35 - Total words: 2328
-	Cluster#36 - Total words: 1116
-	Cluster#37 - Total words: 1050
-	Cluster#38 - Total words: 410
-	Cluster#39 - Total words: 718
+	Cluster 0
+	Most related words: per, i, el, és, més, com, dels, va, pel, tot
+
+	Cluster 1
+	Most related words: presidente, gobierno, ayer, ex, josé, asociación, dijo, según, ministro, josep
+
+	Cluster 2
+	Most related words: toda, ahora, aunque, tan, sido, vez, año, vida, mientras, do
+
+	Cluster 3
+	Most related words: casa, do, si, años, familia, blanca, nueva, toda, día, después
+
+	Cluster 4
+	Most related words: grupo, barcelona, empresa, presidente, año, años, españa, do, parte, compañía
+
+	Cluster 5
+	Most related words: tras, ayer, después, años, año, do, ser, sido, pasado, sólo
+
+	Cluster 6
+	Most related words: miguel, ángel, josé, juan, luis, director, san, según, martín, ayer
+
+	Cluster 7
+	Most related words: barcelona, i, joan, josé, sant, madrid, calle, josep, carlos, juan
+
+	Cluster 8
+	Most related words: do, tres, años, cuatro, grandes, toda, sólo, ayer, si, cinco
+
+	Cluster 9
+	Most related words: cada, vez, año, do, si, menos, ahora, años, mismo, toda
+
+	Cluster 10
+	Most related words: gobierno, siempre, dels, aunque, si, sido, política, casi, ley, pp
+
+	Cluster 11
+	Most related words: obra, además, autor, parte, sido, tan, menos, vida, obras, forma
+
+	Cluster 12
+	Most related words: ser, puede, sido, si, debe, pueden, aunque, do, tan, años
+
+	Cluster 13
+	Most related words: horas, director, canal, tele, antena, i, el, tres, años, después
+
+	Cluster 14
+	Most related words: así, bien, josé, menos, sino, españa, el, hoy, junto, nuevo
+
+	Cluster 15
+	Most related words: millones, peseta, año, dólares, do, años, dinero, ciento, total, pasado
+
+	Cluster 16
+	Most related words: ciudad, barcelona, centro, zona, gran, ayer, do, capital, toda, tan
+
+	Cluster 17
+	Most related words: si, do, años, ayer, sólo, ser, barcelona, ahora, parte, gobierno
+
+	Cluster 18
+	Most related words: día, cada, hoy, años, si, año, barcelona, después, siguiente, ser
+
+	Cluster 19
+	Most related words: tres, do, años, cuatro, ayer, sólo, si, año, grandes, veces
+
+En el archivo _results/wordclustering.txt_ se puede ver output completo de la ejecución.
 
 **Clustering sobre word embeddings neuronales**
+
+Utilizando está técnica, la matriz generada tiene un tamaño de (126281, 100), mucho menor a la técnica anterior.
+
+En el siguiente listado podemos ver las algunas palabras de los 10 primeros clusters:
+
+En el archivo _results/word2vecclustering.txt_ se puede ver output completo de la ejecución.
+
+
